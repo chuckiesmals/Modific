@@ -9,7 +9,8 @@
     "vcs": [
         ["git", "git"],
         ["svn", "svn"],
-        ["hg" , "hg"]
+        ["hg" , "hg"],
+        ["p4", "p4 diff -du1"]
     ],
 
     //if you have some weird OS, that has non-unicode console

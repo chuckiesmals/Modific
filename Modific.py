@@ -18,7 +18,8 @@ def get_vcs_settings():
     return settings.get('vcs', [
         ["git", "git"],
         ["svn", "svn"],
-        ["hg", "hg"]
+        ["hg", "hg"],
+        ["p4", "p4 diff -du1"]
     ])
 
 
@@ -215,6 +216,9 @@ class DiffCommand(VcsCommand):
 
     def hg_diff_command(self, file_name):
         return [self.get_user_command('hg') or 'hg', 'diff', file_name]
+        
+    def p4_diff_command(self, file_name):
+        return [self.get_user_command('p4') or 'p4', 'diff', file_name]
 
 
 class ShowDiffCommand(DiffCommand, sublime_plugin.TextCommand):
